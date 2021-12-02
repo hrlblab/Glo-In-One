@@ -10,6 +10,12 @@ The quantitative detection, segmentation, and characterization of glomeruli from
 
 Please refer to [INSTALL.md](docs/INSTALL.md) for installation instructions of the detection phase.
 
+## Model
+Pretrained model can be found [here](https://drive.google.com/drive/folders/1AhvNaoB7delzgznm4dLkkvZmGipCQShd?usp=sharing).
+
+## Data
+The collected glomerulus from web imaging for self-supervised learning can be found [here](https://data.mendeley.com/datasets/rpbz266jn9/1).
+
 ## Glo-In-One - Image Demo
 
 For glomerulus detection, run 
@@ -30,4 +36,19 @@ For generating segment mask, run
 
 ```
 python segmentation.py --rootdir ../output --wsi ../demo.svs --model ../model/segmentation_model.pth
+```
+
+## Get our Glo-In-One Docker
+
+```
+sudo docker pull 
+```
+You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`
+```
+# you need to specify the input directory
+export input_dir=/home/input_dir   
+# make that directory
+sudo mkdir $input_dir
+#run the docker
+sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS 
 ```
