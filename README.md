@@ -38,11 +38,14 @@ For generating segment mask, run
 python segmentation.py --rootdir ../output --wsi ../demo.svs --model ../model/segmentation_model.pth
 ```
 
-## Get our Glo-In-One Docker
+### Quick start
+
+#### Get our docker image
 
 ```
 sudo docker pull 
 ```
+#### Run Glo-In-One
 You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`
 ```
 # you need to specify the input directory
